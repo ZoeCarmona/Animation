@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de API de Facebook</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeTXawGNi_y5gdicK9Ss1H5hfPr-fsYTHsGQ&usqp=CAU">
+</head>
+<body>
+
+<!-- Agrega el SDK de Facebook -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+<script>
+// Inicializa el SDK de Facebook
+window.fbAsyncInit = function() {
+    FB.init({
+     // appId      : '894715495445217',   // Identificación única de tu aplicación en Facebook
+    //appId      : '8912387481236478', 
+    appId      : '894715495445217',
+    cookie     : true,
+    xfbml      : true,
+      version    : 'v14.0' // Utiliza la versión más reciente de la Graph API
+    });
+}
+  //funcion para configuraciones
+function register(response){
+    //demas configuracion
+}
+  // Llama a la función de inicio de sesión de Facebook
+function loginWithFacebook() {
+    FB.login(function(response) {register(response)}, {scope: 'public_profile,email'}); // Solicita los permisos necesarios
+}
+</script>
+
+<!-- -------------------------------------------------------------- -->
+<header>
+    <h1>API de Facebook</h1>
+</header>
+<!-- -------------------------------------------------------------- -->
+<main>
+    <section>
+        <h1>Bienvenido a esta página</h1>
+        <h4>Por favor, disfruta la imagen e inicia sesión</h4>
+    </section>
+    <section class="main-bp">
+        <section>
+            <img class="bp" src="https://i.pinimg.com/564x/2f/85/c6/2f85c67aabfcd838dcd1d7192eedf5fd.jpg" alt="Image">
+        </section>
+        <section>
+            <img class="bp" src="https://i.pinimg.com/564x/ae/1a/21/ae1a218a2638a1785420090a26300635.jpg" alt="">
+        </section>
+    </section>
+</main>
+<!-- -------------------------------------------------------------- -->
+<footer>
+    <!-- Botón para iniciar sesión con Facebook -->
+    <!-- <button onclick="loginWithFacebook()">
+        
+    </button> -->
+    <h3>Inicia sesión con Facebook</h3>
+    <svg onclick="loginWithFacebook()" class="face" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+    </svg>
+</footer>
+
+</body>
+</html>
